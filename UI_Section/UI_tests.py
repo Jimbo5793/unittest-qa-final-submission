@@ -14,23 +14,22 @@ class TestCoinChangeUI(unittest.TestCase):
         cls.app_thread = threading.Thread(target=app.run, kwargs={'debug': False, 'use_reloader': False})
         cls.app_thread.daemon = True
         cls.app_thread.start()
-        time.sleep(1)  # Allow some time for the server to start
+        time.sleep(1) 
 
         # Initialize the Selenium WebDriver
-        cls.driver = webdriver.Chrome()  # Ensure you have the ChromeDriver installed and in your PATH
-        cls.driver.implicitly_wait(10)  # Implicit wait to handle timing issues
+        cls.driver = webdriver.Chrome()
+        cls.driver.implicitly_wait(10) 
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
 
     def setUp(self):
-        self.driver.get('http://127.0.0.1:5000/')  # Open the Flask app in the browser
+        self.driver.get('http://127.0.0.1:5000/') 
 
     def test_basic_functionality(self):
         driver = self.driver
 
-        # Find elements
         coins_input = driver.find_element(By.ID, 'coins')
         amount_input = driver.find_element(By.ID, 'amount')
         submit_button = driver.find_element(By.TAG_NAME, 'button')
@@ -48,7 +47,6 @@ class TestCoinChangeUI(unittest.TestCase):
     def test_invalid_coins_input(self):
         driver = self.driver
 
-        # Find elements
         coins_input = driver.find_element(By.ID, 'coins')
         amount_input = driver.find_element(By.ID, 'amount')
         submit_button = driver.find_element(By.TAG_NAME, 'button')
@@ -66,7 +64,6 @@ class TestCoinChangeUI(unittest.TestCase):
     def test_edge_case_large_amount(self):
         driver = self.driver
 
-        # Find elements
         coins_input = driver.find_element(By.ID, 'coins')
         amount_input = driver.find_element(By.ID, 'amount')
         submit_button = driver.find_element(By.TAG_NAME, 'button')
@@ -84,7 +81,6 @@ class TestCoinChangeUI(unittest.TestCase):
     def test_edge_case_large_coin_value(self):
         driver = self.driver
 
-        # Find elements
         coins_input = driver.find_element(By.ID, 'coins')
         amount_input = driver.find_element(By.ID, 'amount')
         submit_button = driver.find_element(By.TAG_NAME, 'button')
@@ -102,7 +98,6 @@ class TestCoinChangeUI(unittest.TestCase):
     def test_edge_case_large_number_of_coins(self):
         driver = self.driver
 
-        # Find elements
         coins_input = driver.find_element(By.ID, 'coins')
         amount_input = driver.find_element(By.ID, 'amount')
         submit_button = driver.find_element(By.TAG_NAME, 'button')
@@ -120,7 +115,6 @@ class TestCoinChangeUI(unittest.TestCase):
     def test_edge_case_negative_amount(self):
         driver = self.driver
 
-        # Find elements
         coins_input = driver.find_element(By.ID, 'coins')
         amount_input = driver.find_element(By.ID, 'amount')
         submit_button = driver.find_element(By.TAG_NAME, 'button')

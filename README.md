@@ -1,7 +1,5 @@
 Hi there,
 
-My name is Hamza Rasheed Chattha. 
-
 This is my final project submission for the Quality Assurance Class.
 
 The code I was tasked with testing is the Leetcode task "Coin Change"

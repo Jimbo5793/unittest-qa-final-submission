@@ -42,8 +42,5 @@ class Solution:
         return dp[amount] if dp[amount] != amount + 1 else -1
 
 
-# Example usage:
 solution = Solution()
-print(solution.coin_change([1, 2, 5], 11))  # Output: 3
-print(solution.coin_change([2], 3))  # Output: -1
-print(solution.coin_change([1], 0))  # Output: 0
+

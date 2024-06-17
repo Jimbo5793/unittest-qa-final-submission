@@ -19,9 +19,9 @@ class TestCoinChange(unittest.TestCase):
     def test_edge_cases(self):
         # Test with maximum constraints
         self.assertEqual(self.solution.coin_change([1], 10000), 10000)  # 1 coin for each amount
-        # self.assertEqual(self.solution.coin_change([1], 10001), -1)  # Impossible to make 10001 with 12 of 1
+        # self.assertEqual(self.solution.coin_change([1], 10001), -1)  
         with self.assertRaises(ValueError):
-            self.solution.coin_change([1], 10001)
+            self.solution.coin_change([1], 10001) # Impossible to make 10001 with 12 of 1 hence error message
 
         # Test with very small amounts and single large denomination
         self.assertEqual(self.solution.coin_change([100], 400), 4)  # 400 = 100 * 4
@@ -50,7 +50,7 @@ class TestCoinChange(unittest.TestCase):
             self.solution.coin_change([1, 2147483648], 10) # Coin value too high
 
         with self.assertRaises(ValueError):
-            self.solution.coin_change([1, 2, 3], -1)
+            self.solution.coin_change([1, 2, 3], -1) #test for when negative value inputted
 
     def test_performance(self):
         # Test with large amount and reasonable size coins array
